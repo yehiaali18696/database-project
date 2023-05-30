@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication1.Pages.invoiceModel
+@{
+
+}
+<form method="POST">
+    <label for="id_customer">id_customer:</label><br>
+    <input type="text" id="id_customer" name="id_customer"><br>
+
+    <label for="id_articles">id_articles:</label><br>
+    <input type="text" id="id_articles" name="id_articles"><br>
+
+    <label for="total_price">total_price:</label><br>
+    <input type="text" id="total_price" name="total_price"><br>
+
+    <label for="payment_method">payment_method:</label><br>
+    <input type="text" id="payment_method" name="payment_method"><br>
+   
+    <label for="invoice_date">invoice_date:</label><br>
+    <input type="date" id="invoice_date" name="invoice_date"><br>
+
+
+    <input type="submit" value="Create invoice">
+</form>
+<table>
+    <tr>
+        <th>id</th>
+        <th>id_customer</th>
+        <th>id_articles</th>
+        <th>total_price</th>
+        <th>paymet_method</th>
+        <th>invoice_date</th>
+
+    </tr>
+    @foreach (var item in Model.listInvoice)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.idcustomer</td>
+            <td>@item.idarticles</td>
+            <td>@item.totalprice</td>
+            <td>@item.paymentmethod</td>
+            <td>@item.invoicedate</td>
+
+        </tr>
+
+    }
+
